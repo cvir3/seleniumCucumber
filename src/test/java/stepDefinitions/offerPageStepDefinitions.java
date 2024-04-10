@@ -28,6 +28,10 @@ public class offerPageStepDefinitions {
         testContextSetup.OfferPageProductName = testContextSetup.driver.findElement(By.cssSelector("tr td:nth-child(1)")).getText();
         System.out.println(testContextSetup.OfferPageProductName + "Is extracted from the home page ");
     }
+    public void switchToWindows()
+    {
+
+    }
 
     @Then("validate product name in offers page matches with Landing Page")
     public void validate_product_name_in_offers_page_matches_with_Landing_Page() throws InterruptedException {

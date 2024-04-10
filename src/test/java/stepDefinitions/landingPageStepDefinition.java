@@ -6,6 +6,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import pageObject.LandingPage;
 import utilities.TestContextSetup;
 
 import java.time.Duration;
@@ -32,9 +33,10 @@ public class landingPageStepDefinition {
 
     @When("User searched with shortname {string} and extracted actual name of product")
     public void user_searched_with_shortname_and_extracted_actual_name_of_product(String shortname) throws InterruptedException {
-        testContextSetup.driver.findElement(By.xpath("//input[@type='search']")).sendKeys(shortname);
+        LandingPage lp = new LandingPage(testContextSetup.driver);
+        lp.searchItem(shortname);
         Thread.sleep(3000);
-        testContextSetup.landingProductName = testContextSetup.driver.findElement(By.cssSelector("h4.product-name")).getText().split("-")[0].trim();
+        testContextSetup.landingProductName = lp.getProductName().split("-")[0].trim();
         System.out.println(testContextSetup.landingProductName + "Is extracted from the home page ");
         // Store landingProductName for print, Split method is return to the array and Trim method using for all remove spaces
     }
