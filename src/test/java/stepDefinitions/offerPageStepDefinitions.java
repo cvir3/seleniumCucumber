@@ -1,7 +1,6 @@
 package stepDefinitions;
 
 import io.cucumber.java.en.Then;
-import org.openqa.selenium.By;
 import org.testng.Assert;
 import pageObject.LandingPage;
 import pageObject.OffersPage;
