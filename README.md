@@ -18,5 +18,9 @@ This repository is for learning Cucumber BDD with Java.
 
 - The P2 branch focuses on framework-related topics such as:
     - Cucumber dependecy injection with the help of PicoContainer.
+    - Single responsiblity principle and loosely coupled classes.
+    - Pageobject pattend to drice the test object from class files.
+    - Factory Design pattern implementations.
+    - Build Generic test utilities and pass driver in constructor from context file.
 
 
