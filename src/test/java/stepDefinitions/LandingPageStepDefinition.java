@@ -1,7 +1,6 @@
 package stepDefinitions;
 
-import io.cucumber.java.en.Given;
-import io.cucumber.java.en.When;
+import io.cucumber.java.en.*;
 import org.testng.Assert;
 import pageObject.LandingPage;
 import utilities.TestContextSetup;
@@ -32,4 +31,14 @@ public class LandingPageStepDefinition {
         System.out.println(landingPageProductName + " is extracted from Home page");
         // Store landingProductName for print, Split method is return to the array and Trim method using for all remove spaces
     }
+
+    @When("Added {string} items of the selected product to cart")
+    public void Added_items_product(String quantity) throws InterruptedException
+    {
+
+        landingPage.incrementQuantity(Integer.parseInt(quantity));
+        landingPage.addToCart();
+        Thread.sleep(2000);
+    }
+
 }
